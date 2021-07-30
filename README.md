@@ -1,4 +1,3 @@
-# Voting-Managment-System
 
 Voting-Management-System
 We have used Java Applet Programming along with Derby Database for the following project
@@ -13,7 +12,7 @@ Step 3: You have to connect your database with the Netbeans or use the default D
 Welcome Page Code
 This code you have to paste inside button and Don't Forget to change the variable name
 
-private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {                                      
         setVisible(false);
         new Loginform().setVisible(true);
     }                                     
@@ -22,8 +21,10 @@ private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {
         setVisible(false);
         new Login_form().setVisible(true);
     }
+    
 Login Page Code
-private void loginActionPerformed(java.awt.event.ActionEvent evt) {                                      
+
+        private void loginActionPerformed(java.awt.event.ActionEvent evt) {                                      
         String user = usernametextfield.getText();
         String pass1 = passwordtextfield.getText();
         if(user.trim().equals("admin") && (pass1.trim().equals("12345")))
@@ -42,8 +43,10 @@ private void loginActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         System.exit(0);
     }
+    
 Create Account Page Code
-Connection con;
+
+        Connection con;
     PreparedStatement pst;
     public Login_form() {
         
@@ -61,7 +64,7 @@ Connection con;
             Logger.getLogger(Login_form.class.getName()).log(Level.SEVERE, null, ex);}
         
     }
-private void signupActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        private void signupActionPerformed(java.awt.event.ActionEvent evt) {                                       
         String fname1 = name.getText();
         String lname1 = lname.getText();
         String email1 = email.getText();
@@ -95,8 +98,10 @@ private void signupActionPerformed(java.awt.event.ActionEvent evt) {
         }
 
     }
+
 Menu Page Code
-private void exitActionPerformed(java.awt.event.ActionEvent evt) {                                     
+
+        private void exitActionPerformed(java.awt.event.ActionEvent evt) {                                     
         System.exit(0);
     }                                    
 
@@ -110,7 +115,7 @@ private void exitActionPerformed(java.awt.event.ActionEvent evt) {
         new Loginform().setVisible(true);
     }                                     
 
-private void adddetailActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        private void adddetailActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
         setVisible(false);
         new insert().setVisible(true);
@@ -129,12 +134,13 @@ private void adddetailActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
 Insert Page Code
-import javax.swing.JOptionPane;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-public class insert extends javax.swing.JFrame {
-Connection con9;
+
+        import javax.swing.JOptionPane;
+        import java.sql.*;
+        import java.util.logging.Level;
+        import java.util.logging.Logger;
+        public class insert extends javax.swing.JFrame {
+        Connection con9;
     PreparedStatement pst9;
     public insert() {
         try {
@@ -150,7 +156,7 @@ Connection con9;
         catch (SQLException ex) {
             Logger.getLogger(insert.class.getName()).log(Level.SEVERE, null, ex);}
     }
-private void insertActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        private void insertActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
         String voterid1 = voteridtext.getText();
         String name1 = nametext.getText();
@@ -177,13 +183,14 @@ private void insertActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
 Show, Update, Remove Records
-import javax.swing.JOptionPane;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
-public class edit extends javax.swing.JFrame {
-Connection con;
+
+       import javax.swing.JOptionPane;
+        import java.sql.*;
+        import java.util.logging.Level; 
+        import java.util.logging.Logger;
+        import javax.swing.table.DefaultTableModel;
+        public class edit extends javax.swing.JFrame {
+        Connection con;
     PreparedStatement pst1,pst2,pst3,pst4;
     DefaultTableModel dtm;
     ResultSet rs;
@@ -200,7 +207,7 @@ Connection con;
         catch (SQLException ex) {
             Logger.getLogger(Login_form.class.getName()).log(Level.SEVERE, null, ex);}
     }
-private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
         try{
             pst2=con.prepareStatement("select * from voter_list",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
@@ -300,11 +307,12 @@ private void searchActionPerformed(java.awt.event.ActionEvent evt) {
     }
 
 Search Records Code
-import java.sql.*;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-public class search extends javax.swing.JFrame {
-Connection con;
+
+        import java.sql.*;
+        import javax.swing.JOptionPane;
+        import javax.swing.table.DefaultTableModel;
+        public class search extends javax.swing.JFrame {
+        Connection con;
     PreparedStatement pst;
     DefaultTableModel dtm;
     ResultSet rs;
@@ -324,7 +332,7 @@ Connection con;
             JOptionPane.showMessageDialog(this,"Error in Connection");
         }
     }
-private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
         try
         {
